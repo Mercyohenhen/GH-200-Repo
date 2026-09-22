@@ -1,11 +1,21 @@
+name: class demo
 on: [push]
+
 jobs:
   one:
     runs-on: ubuntu-latest
     steps:
       - run: echo "A" > note.txt
       - run: cat note.txt
+      - uses: actions/upload-artifact@v7
+        with:
+          name: note
+          path: note.txt
   two:
+    needs: one
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/upload-artifact@v7
+        with:
+          name: note
       - run: cat note.txt
