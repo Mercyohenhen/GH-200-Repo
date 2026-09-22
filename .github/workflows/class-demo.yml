@@ -18,4 +18,5 @@ jobs:
       - uses: actions/upload-artifact@v7
         with:
           name: note
+          path: note.txt
       - run: cat note.txt
