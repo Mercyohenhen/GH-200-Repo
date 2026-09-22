@@ -15,7 +15,7 @@ jobs:
     needs: one
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: note
       - run: cat note.txt
